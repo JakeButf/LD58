@@ -13,7 +13,19 @@ public class DialogueTester : MonoBehaviour
                 "It should spell out the text.",
                 "And when you click or press space, it moves to the next line.",
                 "Finally, it closes when it's done."
-            });
+            }, false);
+        }
+
+                // Press "T" to start a test dialogue
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            DialogueManager.Instance.StartDialogue(new string[]
+            {
+                "This dialogue has a paper effect background.",
+                "Isn't that cool?",
+                "You can toggle this effect when starting the dialogue.",
+                "Goodbye!"
+            }, true);
         }
     }
 }

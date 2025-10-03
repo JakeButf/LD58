@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -41,8 +42,18 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(IEnumerable<string> dialogueLines)
+    public void StartDialogue(IEnumerable<string> dialogueLines, bool paperEffect = false)
     {
+        Image image = dialoguePanel.GetComponent<Image>();
+        Color c = image.color;
+        if (paperEffect)
+        {
+            c.a = 1f;
+        } else {
+            c.a = 0f;
+        }
+        image.color = c;
+
         sentences.Clear();
 
         foreach (string line in dialogueLines)
@@ -60,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         {
             // Skip typing animation instantly
             StopCoroutine(typingCoroutine);
-            dialogueText.text = sentences.Peek();
+            dialogueText.text = sentences.Dequeue();
             isTyping = false;
             return;
         }
@@ -71,7 +82,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        string sentence = sentences.Peek();
         typingCoroutine = StartCoroutine(TypeSentence(sentence));
     }
 
@@ -87,6 +98,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         isTyping = false;
+        sentences.Dequeue();
     }
 
     void EndDialogue()
