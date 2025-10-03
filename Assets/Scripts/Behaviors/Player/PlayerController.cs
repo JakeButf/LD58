@@ -51,8 +51,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(PlayerInput.MoveLeft)) velocity -= transform.right;
         if (Input.GetKey(PlayerInput.MoveRight)) velocity += transform.right;
 
-        if (Input.G)
-
         playerController.Move(velocity.normalized * speed * Time.deltaTime);
 
         if(playerController.isGrounded && velocity.y < 0)
