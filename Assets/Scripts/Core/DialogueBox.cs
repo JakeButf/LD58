@@ -11,6 +11,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float typingSpeed = 0.03f;
+    [Header("Audio")]
+
+    private AudioClip advanceClip;
+    private AudioClip charClip;
+
+    [SerializeField][Range(0f, 1f)] private float advanceVolume = 1f;
+    [SerializeField][Range(0f, 1f)] private float charVolume = 0.6f;
+    [SerializeField] private float charPitchVariance = 0.05f;
+    [SerializeField] private int charSfxEveryN = 2;
+    private AudioSource audioSource;
 
     private Queue<string> sentences;
     private Coroutine typingCoroutine;
@@ -24,6 +34,13 @@ public class DialogueManager : MonoBehaviour
         DontDestroyOnLoad(gameObject); // persist across scenes if needed
         sentences = new Queue<string>();
         dialoguePanel.SetActive(false);
+        // Ensure an AudioSource exists for SFX playback
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
     }
 
     void Update()
@@ -45,16 +62,12 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(IEnumerable<string> dialogueLines, bool paperEffect = false)
     {
         Image image = dialoguePanel.GetComponent<Image>();
-        Color c = image.color;
-        if (paperEffect)
+        if (image != null)
         {
-            c.a = 1f;
+            Color c = image.color;
+            c.a = paperEffect ? 1f : 0f;
+            image.color = c;
         }
-        else
-        {
-            c.a = 0f;
-        }
-        image.color = c;
 
         sentences.Clear();
 
@@ -65,6 +78,16 @@ public class DialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         DisplayNextSentence();
+    }
+
+    // Overload to pass optional SFX per-dialogue
+    public void StartDialogue(IEnumerable<string> dialogueLines, AudioClip advanceSfx = null, AudioClip charSfx = null, bool paperEffect = false)
+    {
+        // If clips provided, override the inspector defaults for this dialogue (for this dialogue session)
+        if (advanceSfx != null) advanceClip = advanceSfx;
+        if (charSfx != null) charClip = charSfx;
+
+        StartDialogue(dialogueLines, paperEffect);
     }
 
     public void DisplayNextSentence()
@@ -85,6 +108,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Peek();
+        // Play advance SFX whenever DisplayNextSentence is invoked (can be skip or next)
+        if (advanceClip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(advanceClip, advanceVolume);
+        }
         typingCoroutine = StartCoroutine(TypeSentence(sentence));
     }
 
@@ -93,12 +121,30 @@ public class DialogueManager : MonoBehaviour
         isTyping = true;
         dialogueText.text = "";
 
+        int visibleCount = 0; // count of visible (non-whitespace, non-tag) chars
+
+        // sanity clamp
+        if (charSfxEveryN < 1) charSfxEveryN = 1;
+        //little pause before starting to type
+        yield return new WaitForSeconds(.3f);
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
 
+            if (!char.IsWhiteSpace(letter))
+            {
+                visibleCount++;
+                if (charClip != null && audioSource != null && (visibleCount % charSfxEveryN) == 0)
+                {
+                    float originalPitch = audioSource.pitch;
+                    audioSource.pitch = 1f + Random.Range(-charPitchVariance, charPitchVariance);
+                    audioSource.PlayOneShot(charClip, charVolume);
+                    audioSource.pitch = originalPitch;
+                }
+
+                yield return new WaitForSeconds(typingSpeed);
+            }
+        }
         isTyping = false;
         sentences.Dequeue();
     }
@@ -107,7 +153,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
     }
-    
+
     public bool IsDialogueActive()
     {
         return dialoguePanel.activeSelf;
