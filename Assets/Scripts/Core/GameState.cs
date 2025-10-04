@@ -9,12 +9,15 @@ public class GameState : MonoBehaviour
     public Image black;
     public Animator anim;
     public string scene;
+    private int bellInventory = 0;
+
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject); 
+        DontDestroyOnLoad(gameObject);
+        DisplayBells();
         PlayerInput.Initialize();
     }
 
@@ -28,7 +31,7 @@ public class GameState : MonoBehaviour
     {
 
     }
-    
+
     public void LoadScene(string scene)
     {
         this.scene = scene;
@@ -41,5 +44,27 @@ public class GameState : MonoBehaviour
         yield return new WaitUntil(() => black.color.a == 1);
         SceneManager.LoadScene(scene);
         anim.SetBool("Fade", false);
+    }
+
+    public void AddBell()
+    {
+        bellInventory++;
+        DisplayBells();
+    }
+
+    public void RemoveBell()
+    {
+        bellInventory--;
+        DisplayBells();
+    }
+    
+    // display as many bells as in inventory
+    public void DisplayBells()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (i < bellInventory) GameObject.Find("Bell" + (i + 1)).GetComponent<Image>().enabled = true;
+            else GameObject.Find("Bell" + (i + 1)).GetComponent<Image>().enabled = false;
+        }
     }
 }
