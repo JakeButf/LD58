@@ -9,7 +9,9 @@ public static class GameFlags
     private static Dictionary<string, bool> flags = new Dictionary<string, bool>()
     {
         {"floor1_bell_complete", false},
-        {"second_room_entered", false}
+        {"second_room_entered", false},
+        {"player_can_move", true},
+        {"maritime_chest_unlocked", false}
     };
 
     public static bool GetFlag(string flagName)

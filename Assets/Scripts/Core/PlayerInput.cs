@@ -8,6 +8,7 @@ public static class PlayerInput
     public static KeyCode MoveRight { get; private set; }
     public static KeyCode Jump { get; private set; }
     public static KeyCode Interact { get; private set; }
+    public static KeyCode Escape { get; private set; }
     public static float MouseSensitivity { get; private set; } 
 
     public static void Initialize()
@@ -18,6 +19,7 @@ public static class PlayerInput
         MoveRight = KeyCode.D;
         Jump = KeyCode.Space;
         Interact = KeyCode.E;
+        Escape = KeyCode.Escape;
         MouseSensitivity = 1f; 
 
     }

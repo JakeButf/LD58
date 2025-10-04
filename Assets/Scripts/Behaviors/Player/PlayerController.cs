@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
             // Debug.Log($"Grounded? {playerController.isGrounded}");
         }
 
+        if (!GameFlags.GetFlag("player_can_move")) return;
+
         //Camera
         float mouseX = Input.GetAxis("Mouse X") * PlayerInput.MouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * PlayerInput.MouseSensitivity;
