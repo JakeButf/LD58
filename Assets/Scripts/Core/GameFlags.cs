@@ -3,9 +3,13 @@ using UnityEngine;
 
 public static class GameFlags
 {
+
+    public static System.Action OnFlagsUpdated;
+
     private static Dictionary<string, bool> flags = new Dictionary<string, bool>()
     {
-        {"floor1_bell_complete", false}
+        {"floor1_bell_complete", false},
+        {"second_room_entered", false}
     };
 
     public static bool GetFlag(string flagName)
@@ -32,5 +36,8 @@ public static class GameFlags
             Debug.LogWarning($"Flag '{flagName}' does not exist. Creating it with value {value}.");
             flags[flagName] = value;
         }
+
+        OnFlagsUpdated?.Invoke();
     }
+    
 }
