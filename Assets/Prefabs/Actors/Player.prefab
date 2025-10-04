@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   playerController: {fileID: 0}
   camera: {fileID: 969549157638789573}
-  moveSpeed: 5
+  moveSpeed: 2.5
   gravity: -9.81
   jumpHeight: 1
 --- !u!1 &2438599796542575372
