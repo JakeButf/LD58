@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -6,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     bool SHOW_DEBUG = true;
     [SerializeField] private CharacterController playerController;
+    [SerializeField] private Transform armTransform;
 
     [Header("Look Settings")]
     [SerializeField] private Camera camera;
@@ -16,12 +16,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 1.5f;
 
+    [Header("Head Bob")]
+    [SerializeField] private float bobFrequency = 1.5f;
+    [SerializeField] private float bobHeight = 0.05f;
+    [SerializeField] private float bobSmoothing = 8f;
+    private float bobTimer = 0f;
+    private Vector3 initialCameraPosition;
     private Vector3 velocity;
 
     void Start()
     {
         if (playerController == null) playerController = GetComponent<CharacterController>();
         if (camera == null) camera = Camera.main;
+        initialCameraPosition = camera.transform.localPosition;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -47,6 +54,7 @@ public class PlayerController : MonoBehaviour
         pitch -= mouseY;
         pitch = Mathf.Clamp(pitch, -80f, 80f);
         camera.transform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
+        armTransform.localRotation = Quaternion.Euler(pitch, 0f, 0f);
         playerController.transform.Rotate(Vector3.up * mouseX);
         //Movement
         float speed = moveSpeed;
@@ -63,7 +71,7 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f;
         }
 
-        if (IsGrounded()&& Input.GetKeyDown(PlayerInput.Jump))
+        if (IsGrounded() && Input.GetKeyDown(PlayerInput.Jump))
         {
             Debug.Log("Jump");
             velocity.y = Mathf.Sqrt(jumpHeight * gravity * -2f);
@@ -71,10 +79,30 @@ public class PlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         playerController.Move(velocity * Time.deltaTime);
+        Headbob(move);
     }
 
     bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, playerController.height / 2f + 0.1f);
+    }
+
+    void Headbob(Vector3 move)
+    {
+        bool isMoving = move.magnitude > 0.1f && IsGrounded();
+        Vector3 targetPosition = initialCameraPosition;
+
+        if (isMoving)
+        {
+            bobTimer += Time.deltaTime * bobFrequency;
+            float offsetY = Mathf.Sin(bobTimer * 2f) * bobHeight;
+            float offsetX = Mathf.Cos(bobTimer) * bobHeight * 0.5f;
+            targetPosition += new Vector3(offsetX, offsetY, 0f);
+        }
+        else
+        {
+            bobTimer = 0f;
+        }
+        camera.transform.localPosition = Vector3.Lerp(camera.transform.localPosition, targetPosition, Time.deltaTime * bobSmoothing);
     }
 }
