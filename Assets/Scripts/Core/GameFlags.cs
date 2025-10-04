@@ -5,7 +5,7 @@ public static class GameFlags
 {
     private static Dictionary<string, bool> flags = new Dictionary<string, bool>()
     {
-        {"floor1_door_unlocked", false}
+        {"floor1_bell_complete", false}
     };
 
     public static bool GetFlag(string flagName)
