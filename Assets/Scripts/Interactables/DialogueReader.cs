@@ -11,6 +11,6 @@ public class DialogueReader : Interactable
 
     public override void Interact()
     {
-        DialogueManager.Instance.StartDialogue(dialogueLines, advanceSfx, charSfx, paperEffect);
+        DialogueManager.Instance.StartDialogue(dialogueLines, paperEffect, advanceSfx, charSfx);
     }
 }

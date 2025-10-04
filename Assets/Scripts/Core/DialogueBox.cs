@@ -59,8 +59,13 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(IEnumerable<string> dialogueLines, bool paperEffect = false)
+    // Overload to pass optional SFX per-dialogue
+    public void StartDialogue(IEnumerable<string> dialogueLines, bool paperEffect = false, AudioClip advanceSfx = null, AudioClip charSfx = null)
     {
+        // If clips provided, override the inspector defaults for this dialogue (for this dialogue session)
+        if (advanceSfx != null) advanceClip = advanceSfx;
+        if (charSfx != null) charClip = charSfx;
+
         Image image = dialoguePanel.GetComponent<Image>();
         if (image != null)
         {
@@ -78,16 +83,6 @@ public class DialogueManager : MonoBehaviour
 
         dialoguePanel.SetActive(true);
         DisplayNextSentence();
-    }
-
-    // Overload to pass optional SFX per-dialogue
-    public void StartDialogue(IEnumerable<string> dialogueLines, AudioClip advanceSfx = null, AudioClip charSfx = null, bool paperEffect = false)
-    {
-        // If clips provided, override the inspector defaults for this dialogue (for this dialogue session)
-        if (advanceSfx != null) advanceClip = advanceSfx;
-        if (charSfx != null) charClip = charSfx;
-
-        StartDialogue(dialogueLines, paperEffect);
     }
 
     public void DisplayNextSentence()
