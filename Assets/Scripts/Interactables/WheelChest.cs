@@ -7,6 +7,8 @@ public class WheelChest : Interactable
     {
         puzzleCanvas.SetActive(true);
         GameFlags.SetFlag("player_can_move", false);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
     
 }

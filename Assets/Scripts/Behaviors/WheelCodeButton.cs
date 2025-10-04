@@ -11,7 +11,7 @@ public class WheelCodeButton : MonoBehaviour
     public void OnClick()
     {
         int n = Convert.ToInt32(text.text);
-        if (n == 9) { n = 0; return; }
+        if (n == 9) { n = 0; text.text = n.ToString(); codeLock.CheckCode(); return; }
         n++;
         text.text = n.ToString();
         codeLock.CheckCode();

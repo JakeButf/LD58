@@ -15,6 +15,8 @@ public class WheelCodeLock : MonoBehaviour
             GameFlags.SetFlag("player_can_move", true);
             DialogueManager.Instance.StartDialogue(completedDialog);
             this.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
@@ -24,6 +26,8 @@ public class WheelCodeLock : MonoBehaviour
         {
             GameFlags.SetFlag("player_can_move", true);
             this.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }

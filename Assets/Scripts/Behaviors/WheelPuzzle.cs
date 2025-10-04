@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Collections;
 using UnityEngine;
 
 public class WheelPuzzle : MonoBehaviour
@@ -6,6 +7,7 @@ public class WheelPuzzle : MonoBehaviour
     [SerializeField] Transform[] shipPositions;
     [SerializeField] Color[] lightColors;
     [SerializeField] GameObject[] ghosts;
+    [SerializeField] GameObject[] islandObjects;
     [SerializeField] Light areaLight;
     [SerializeField] GameObject ship;
     int currentShipPos = 0;
@@ -30,8 +32,10 @@ public class WheelPuzzle : MonoBehaviour
     public void MoveRight()
     {
         if (currentShipPos == shipPositions.Length) return;
+        if (currentShipPos == 3 && GameFlags.GetFlag("maritime_chest_unlocked") == false) return;
         currentShipPos++;
         UnloadAllObjects();
+        LoadObjects();
         ghosts[currentShipPos].SetActive(true);
         StartCoroutine(RotateOverTime(0.5f, 180));
     }
@@ -41,6 +45,7 @@ public class WheelPuzzle : MonoBehaviour
         if (currentShipPos == 0) return;
         currentShipPos--;
         UnloadAllObjects();
+        LoadObjects();
         ghosts[currentShipPos].SetActive(true);
         StartCoroutine(RotateOverTime(0.5f, -180));
     }
@@ -51,6 +56,17 @@ public class WheelPuzzle : MonoBehaviour
         {
             g.SetActive(false);
         }
+
+        foreach (GameObject g in islandObjects)
+        {
+            g.SetActive(false);
+        }
+
+    }
+
+    void LoadObjects()
+    {
+        islandObjects[currentShipPos].SetActive(true);
     }
 
     private IEnumerator RotateOverTime(float duration, float degrees)
