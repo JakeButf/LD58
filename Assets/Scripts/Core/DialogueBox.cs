@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (dialoguePanel.activeSelf) 
+        if (dialoguePanel.activeSelf)
         {
             if (Input.GetMouseButtonDown(0)) // left click
             {
@@ -49,7 +49,9 @@ public class DialogueManager : MonoBehaviour
         if (paperEffect)
         {
             c.a = 1f;
-        } else {
+        }
+        else
+        {
             c.a = 0f;
         }
         image.color = c;
@@ -104,5 +106,10 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         dialoguePanel.SetActive(false);
+    }
+    
+    public bool IsDialogueActive()
+    {
+        return dialoguePanel.activeSelf;
     }
 }
