@@ -1,0 +1,36 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public static class GameFlags
+{
+    private static Dictionary<string, bool> flags = new Dictionary<string, bool>()
+    {
+        {"floor1_door_unlocked", false}
+    };
+
+    public static bool GetFlag(string flagName)
+    {
+        if (flags.ContainsKey(flagName))
+        {
+            return flags[flagName];
+        }
+        else
+        {
+            Debug.LogWarning($"Flag '{flagName}' does not exist. Returning false by default.");
+            return false;
+        }
+    }
+
+    public static void SetFlag(string flagName, bool value)
+    {
+        if (flags.ContainsKey(flagName))
+        {
+            flags[flagName] = value;
+        }
+        else
+        {
+            Debug.LogWarning($"Flag '{flagName}' does not exist. Creating it with value {value}.");
+            flags[flagName] = value;
+        }
+    }
+}
