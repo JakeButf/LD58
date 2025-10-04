@@ -19,6 +19,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int charSfxEveryN = 2;
     private AudioSource audioSource;
 
+    [SerializeField] private float ghostMinAlpha = 0.1f;
+    [SerializeField] private float ghostMaxAlpha = .8f;
+    private Coroutine ghostFadeCoroutine;
+
+
     private Queue<DialogueLine> sentences;
     private Coroutine typingCoroutine;
     private bool isTyping;
@@ -55,9 +60,9 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-    public void StartDialogue(string[] dialogueLines, bool paperEffect = false, AudioClip advanceClip = null, AudioClip charClip = null)
+    public void StartDialogue(string[] dialogueLines, bool ghostEffect = false, AudioClip advanceClip = null, AudioClip charClip = null)
     {
-        List<DialogueLine> lines = buildDialogueLines(dialogueLines, paperEffect, advanceClip, charClip);
+        List<DialogueLine> lines = buildDialogueLines(dialogueLines, ghostEffect, advanceClip, charClip);
         StartDialogue(lines);
     }
 
@@ -97,9 +102,22 @@ public class DialogueManager : MonoBehaviour
         Image image = dialoguePanel.GetComponent<Image>();
         if (image != null)
         {
-            Color c = image.color;
-            c.a = sentence.paperEffect ? 1f : 0f;
-            image.color = c;
+            if (ghostFadeCoroutine != null)
+            {
+                StopCoroutine(ghostFadeCoroutine);
+                ghostFadeCoroutine = null;
+            }
+
+            if (sentence.ghostEffect)
+            {
+                ghostFadeCoroutine = StartCoroutine(GhostFadeEffect(image));
+            }
+            else
+            {
+                Color c = image.color;
+                c.a = 0f;
+                image.color = c;
+            }
         }
         // Play advance SFX whenever DisplayNextSentence is invoked (can be skip or next)
         if (sentence.advanceClip != null && audioSource != null)
@@ -142,8 +160,41 @@ public class DialogueManager : MonoBehaviour
         sentences.Dequeue();
     }
 
+   private IEnumerator GhostFadeEffect(Image image)
+{
+    float duration = 1.5f; // seconds for each fade phase
+    bool fadingOut = false;
+
+    while (true)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+            float alpha = fadingOut
+                ? Mathf.Lerp(ghostMaxAlpha, ghostMinAlpha, t)
+                : Mathf.Lerp(ghostMinAlpha, ghostMaxAlpha, t);
+
+            Color c = image.color;
+            c.a = alpha;
+            image.color = c;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        fadingOut = !fadingOut;
+    }
+}
     void EndDialogue()
     {
+        if (ghostFadeCoroutine != null)
+        {
+            StopCoroutine(ghostFadeCoroutine);
+            ghostFadeCoroutine = null;
+        }
+
         dialoguePanel.SetActive(false);
     }
 
@@ -152,12 +203,12 @@ public class DialogueManager : MonoBehaviour
         return dialoguePanel.activeSelf;
     }
 
-    public List<DialogueLine> buildDialogueLines(string[] lines, bool paperEffect = false, AudioClip advanceClip = null, AudioClip charClip = null)
+    public List<DialogueLine> buildDialogueLines(string[] lines, bool ghostEffect = false, AudioClip advanceClip = null, AudioClip charClip = null)
     {
         List<DialogueLine> dialogueLines = new List<DialogueLine>();
         foreach (string s in lines)
         {
-            DialogueLine line = new DialogueLine(s, paperEffect, advanceClip, charClip);
+            DialogueLine line = new DialogueLine(s, ghostEffect, advanceClip, charClip);
             dialogueLines.Add(line);
         }
         return dialogueLines;
