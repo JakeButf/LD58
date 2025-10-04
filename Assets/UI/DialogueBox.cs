@@ -13,16 +13,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.03f;
     [Header("Audio")]
 
-    private AudioClip advanceClip;
-    private AudioClip charClip;
-
     [SerializeField][Range(0f, 1f)] private float advanceVolume = 1f;
     [SerializeField][Range(0f, 1f)] private float charVolume = 0.6f;
     [SerializeField] private float charPitchVariance = 0.05f;
     [SerializeField] private int charSfxEveryN = 2;
     private AudioSource audioSource;
 
-    private Queue<string> sentences;
+    private Queue<DialogueLine> sentences;
     private Coroutine typingCoroutine;
     private bool isTyping;
 
@@ -32,7 +29,7 @@ public class DialogueManager : MonoBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject); // persist across scenes if needed
-        sentences = new Queue<string>();
+        sentences = new Queue<DialogueLine>();
         dialoguePanel.SetActive(false);
         // Ensure an AudioSource exists for SFX playback
         audioSource = GetComponent<AudioSource>();
@@ -58,25 +55,17 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-
-    // Overload to pass optional SFX per-dialogue
-    public void StartDialogue(IEnumerable<string> dialogueLines, bool paperEffect = false, AudioClip advanceSfx = null, AudioClip charSfx = null)
+    public void StartDialogue(string[] dialogueLines, bool paperEffect = false, AudioClip advanceClip = null, AudioClip charClip = null)
     {
-        // If clips provided, override the inspector defaults for this dialogue (for this dialogue session)
-        if (advanceSfx != null) advanceClip = advanceSfx;
-        if (charSfx != null) charClip = charSfx;
+        List<DialogueLine> lines = buildDialogueLines(dialogueLines, paperEffect, advanceClip, charClip);
+        StartDialogue(lines);
+    }
 
-        Image image = dialoguePanel.GetComponent<Image>();
-        if (image != null)
-        {
-            Color c = image.color;
-            c.a = paperEffect ? 1f : 0f;
-            image.color = c;
-        }
-
+    public void StartDialogue(IEnumerable<DialogueLine> dialogueLines)
+    {
         sentences.Clear();
 
-        foreach (string line in dialogueLines)
+        foreach (DialogueLine line in dialogueLines)
         {
             sentences.Enqueue(line);
         }
@@ -87,11 +76,13 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+
         if (isTyping)
         {
             // Skip typing animation instantly
             StopCoroutine(typingCoroutine);
-            dialogueText.text = sentences.Dequeue();
+            DialogueLine nextLine = sentences.Dequeue();
+            dialogueText.text = nextLine.text;
             isTyping = false;
             return;
         }
@@ -102,16 +93,23 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Peek();
-        // Play advance SFX whenever DisplayNextSentence is invoked (can be skip or next)
-        if (advanceClip != null && audioSource != null)
+        DialogueLine sentence = sentences.Peek();
+        Image image = dialoguePanel.GetComponent<Image>();
+        if (image != null)
         {
-            audioSource.PlayOneShot(advanceClip, advanceVolume);
+            Color c = image.color;
+            c.a = sentence.paperEffect ? 1f : 0f;
+            image.color = c;
+        }
+        // Play advance SFX whenever DisplayNextSentence is invoked (can be skip or next)
+        if (sentence.advanceClip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sentence.advanceClip, advanceVolume);
         }
         typingCoroutine = StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(DialogueLine sentence)
     {
         isTyping = true;
         dialogueText.text = "";
@@ -122,18 +120,18 @@ public class DialogueManager : MonoBehaviour
         if (charSfxEveryN < 1) charSfxEveryN = 1;
         //little pause before starting to type
         yield return new WaitForSeconds(.3f);
-        foreach (char letter in sentence.ToCharArray())
+        foreach (char letter in sentence.text.ToCharArray())
         {
             dialogueText.text += letter;
 
             if (!char.IsWhiteSpace(letter))
             {
                 visibleCount++;
-                if (charClip != null && audioSource != null && (visibleCount % charSfxEveryN) == 0)
+                if (sentence.charClip != null && audioSource != null && (visibleCount % charSfxEveryN) == 0)
                 {
                     float originalPitch = audioSource.pitch;
                     audioSource.pitch = 1f + Random.Range(-charPitchVariance, charPitchVariance);
-                    audioSource.PlayOneShot(charClip, charVolume);
+                    audioSource.PlayOneShot(sentence.charClip, charVolume);
                     audioSource.pitch = originalPitch;
                 }
 
@@ -152,5 +150,16 @@ public class DialogueManager : MonoBehaviour
     public bool IsDialogueActive()
     {
         return dialoguePanel.activeSelf;
+    }
+
+    public List<DialogueLine> buildDialogueLines(string[] lines, bool paperEffect = false, AudioClip advanceClip = null, AudioClip charClip = null)
+    {
+        List<DialogueLine> dialogueLines = new List<DialogueLine>();
+        foreach (string s in lines)
+        {
+            DialogueLine line = new DialogueLine(s, paperEffect, advanceClip, charClip);
+            dialogueLines.Add(line);
+        }
+        return dialogueLines;
     }
 }
