@@ -9,7 +9,9 @@ public class GameState : MonoBehaviour
     public Image black;
     public Animator anim;
     public string scene;
-    private int bellInventory = 0;
+    public int bellInventory = 0;
+
+    public static System.Action OnBellCountChanged;
 
     void Awake()
     {
@@ -49,12 +51,14 @@ public class GameState : MonoBehaviour
     public void AddBell()
     {
         bellInventory++;
+        OnBellCountChanged?.Invoke();
         DisplayBells();
     }
 
     public void RemoveBell()
     {
         bellInventory--;
+        OnBellCountChanged?.Invoke();
         DisplayBells();
     }
     
