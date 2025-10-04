@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bd6d4fb26c636544daf5a06d5f7d7593, type: 2}
+  m_sharedMaterial: {fileID: 616794911730471541, guid: bd6d4fb26c636544daf5a06d5f7d7593, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -331,6 +331,10 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1139399068168519714}
   dialogueText: {fileID: 4395453445880555802}
   typingSpeed: 0.03
+  advanceVolume: 1
+  charVolume: 0.6
+  charPitchVariance: 0.05
+  charSfxEveryN: 2
 --- !u!114 &1816541138001175485
 MonoBehaviour:
   m_ObjectHideFlags: 0
