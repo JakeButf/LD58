@@ -76,6 +76,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialoguePanel.SetActive(true);
+        GameFlags.SetFlag("player_can_move", false);
         DisplayNextSentence();
     }
 
@@ -195,6 +196,7 @@ public class DialogueManager : MonoBehaviour
             ghostFadeCoroutine = null;
         }
 
+        GameFlags.SetFlag("player_can_move", true);
         dialoguePanel.SetActive(false);
     }
 
