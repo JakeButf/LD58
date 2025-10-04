@@ -1,16 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueReader : Interactable
 {
 
-    [SerializeField] protected string[] dialogueLines;
-    [SerializeField] protected bool ghostEffect = false;
-    [Header("SFX (per-instance)")]
-    [SerializeField] protected AudioClip advanceSfx;
-    [SerializeField] protected AudioClip charSfx;
+    [SerializeField] protected List<DialogueLine> dialogueLines;
 
     public override void Interact()
     {
-        DialogueManager.Instance.StartDialogue(dialogueLines, ghostEffect, advanceSfx, charSfx);
+        DialogueManager.Instance.StartDialogue(dialogueLines);
     }
 }

@@ -19,8 +19,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int charSfxEveryN = 2;
     private AudioSource audioSource;
 
-    [SerializeField] private float ghostMinAlpha = 0.1f;
-    [SerializeField] private float ghostMaxAlpha = .8f;
+    [SerializeField] private float ghostMinAlpha = 0.3f;
+    [SerializeField] private float ghostMaxAlpha = .1f;
     private Coroutine ghostFadeCoroutine;
 
 

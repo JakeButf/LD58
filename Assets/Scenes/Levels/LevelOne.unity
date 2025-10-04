@@ -1804,10 +1804,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
   promptMessage: (E) to Inspect
   dialogueLines:
-  - This is a test
-  ghostEffect: 1
-  advanceSfx: {fileID: 0}
-  charSfx: {fileID: 0}
+  - text: I am a ghost.
+    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
+    charClip: {fileID: 0}
+    ghostEffect: 1
 --- !u!4 &1307757752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
