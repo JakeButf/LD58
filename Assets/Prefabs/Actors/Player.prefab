@@ -115,6 +115,9 @@ MonoBehaviour:
   bobFrequency: 3.2
   bobHeight: 0.04
   bobSmoothing: 8
+  stepInterval: 0.7
+  walkSfx: {fileID: 8300000, guid: d5dba7232b1bc4649b5fd5e98b549a5d, type: 3}
+  walkVolume: 0.547
 --- !u!114 &5969575930890520920
 MonoBehaviour:
   m_ObjectHideFlags: 0

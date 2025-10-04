@@ -24,6 +24,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 initialCameraPosition;
     private Vector3 velocity;
 
+    [Header("Footstep Settings")]
+    [SerializeField] private float stepInterval = 1.5f; // time between steps
+    private float stepTimer = 0f;
+
+    [Header("Walk Sound Effects")]
+    [SerializeField] private AudioClip walkSfx;
+    [SerializeField][Range(0f, 1f)] private float walkVolume = .3f;
+    private AudioSource audioSource;
+
     void Start()
     {
         if (playerController == null) playerController = GetComponent<CharacterController>();
@@ -31,6 +40,12 @@ public class PlayerController : MonoBehaviour
         initialCameraPosition = camera.transform.localPosition;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
     }
 
     // Update is called once per frame
@@ -96,15 +111,40 @@ public class PlayerController : MonoBehaviour
 
         if (isMoving)
         {
+            // Handle bobbing
             bobTimer += Time.deltaTime * bobFrequency;
             float offsetY = Mathf.Sin(bobTimer * 2f) * bobHeight;
             float offsetX = Mathf.Cos(bobTimer) * bobHeight * 0.5f;
             targetPosition += new Vector3(offsetX, offsetY, 0f);
+
+            // Handle footsteps
+            stepTimer += Time.deltaTime;
+
+            if (stepTimer >= stepInterval)
+            {
+                PlayFootstep();
+                stepTimer = 0f;
+            }
         }
         else
         {
             bobTimer = 0f;
+            stepTimer = stepInterval; // reset so step plays immediately when moving again
         }
+
         camera.transform.localPosition = Vector3.Lerp(camera.transform.localPosition, targetPosition, Time.deltaTime * bobSmoothing);
     }
+
+    void PlayFootstep()
+    {
+        if (walkSfx != null && audioSource != null)
+        {
+            // Optional: randomize pitch slightly for realism
+            float originalPitch = audioSource.pitch;
+            audioSource.pitch = 1f + Random.Range(-0.1f, 0.1f);
+            audioSource.PlayOneShot(walkSfx, walkVolume);
+            audioSource.pitch = originalPitch;
+        }
+    }
+
 }
