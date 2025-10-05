@@ -2963,6 +2963,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1273390260969282879, guid: 80846ef68667fce478a6116994369d34, type: 3}
+      propertyPath: flagForPlacing
+      value: placed_bell3
+      objectReference: {fileID: 0}
     - target: {fileID: 2925464465678665162, guid: 80846ef68667fce478a6116994369d34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.128
@@ -3092,8 +3096,61 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 948d94b66ba722f42a69e1668065d305, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 829253891}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 948d94b66ba722f42a69e1668065d305, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 829253892}
   m_SourcePrefab: {fileID: 100100000, guid: 948d94b66ba722f42a69e1668065d305, type: 3}
+--- !u!1 &829253890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 948d94b66ba722f42a69e1668065d305, type: 3}
+  m_PrefabInstance: {fileID: 829253889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &829253891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829253890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398e4947bea2c9c4cbbd50c6a113db93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlagDoor
+  promptMessage: (E) to Inspect
+  unlockedFlag: all_bells_placed
+  lockedText:
+  - The door won't budge.
+  sceneToLoad: TopOfTower
+  playerPos: {x: 0, y: 0, z: 0}
+  playerRot: {x: 0, y: 0, z: 0}
+  doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
+  volume: 0.948
+--- !u!65 &829253892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829253890}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: -2.37, z: 1.64}
+  m_Center: {x: 1.9, y: 1.18, z: 0}
 --- !u!4 &848097388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
@@ -5183,6 +5240,10 @@ PrefabInstance:
       propertyPath: black
       value: 
       objectReference: {fileID: 180716406}
+    - target: {fileID: 5272589152420959604, guid: d19348bf0fcab0043830e334d04906f5, type: 3}
+      propertyPath: bellInventory
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5548657647121441896, guid: d19348bf0fcab0043830e334d04906f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.47949
