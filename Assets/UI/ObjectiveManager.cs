@@ -21,7 +21,9 @@ public class ObjectiveManager : MonoBehaviour
 
             objectives = new List<Objective>
         {
-            new Objective("open_door", "Find a way to open the door.", new List<string> { }),
+            new Objective("enter_building", "Enter the mysterious place.", new List<string> { }),
+            new Objective("level1", "Investigate the area.", new List<string> {"entered_building"}),
+            new Objective("open_door", "Find a way to open the door.", new List<string> {"entered_building", "tried_door" }),
             new Objective("go_upstairs", "Get to the next floor.", new List<string> { "floor1_bell_complete" }),
             new Objective("explore", "Explore the area...", new List<string> { "floor1_bell_complete", "second_room_entered" }),
             //maritime

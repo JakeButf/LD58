@@ -18,6 +18,10 @@ public class FlagDoor : Interactable
         if (!GameFlags.GetFlag(unlockedFlag))
         {
             DialogueManager.Instance.StartDialogue(lockedText);
+            if (unlockedFlag == "floor1_bell_complete")
+            {
+                GameFlags.SetFlag("tried_door", true);
+            }
         }
         else
         {

@@ -108,6 +108,10 @@ public class GameState : MonoBehaviour
         {
             GameFlags.SetFlag("second_room_entered", true);
         }
+        if (scene == "LevelOne")
+        {
+            GameFlags.SetFlag("entered_building", true);
+        }
 
     }
 
