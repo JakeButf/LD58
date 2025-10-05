@@ -85,7 +85,7 @@ public class CrystalOrchestra : Interactable
     public override void Interact()
     {
         if (GameFlags.GetFlag("orchestra_complete")) return;
-        desiredRotation = (desiredRotation + 45f) % 360f;
+        desiredRotation = (desiredRotation + 45f);
     }
     void OnDrawGizmos()
     {
