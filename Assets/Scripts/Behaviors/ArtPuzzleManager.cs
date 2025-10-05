@@ -21,6 +21,8 @@ public class ArtPuzzleManager : MonoBehaviour
     public GameObject wall;
     public GameObject door;
 
+    public AudioSource clickSfx;
+
     public void UpdateSelectedPiece(ArtPiece piece)
     {
         currentSelectedPiece = piece;
@@ -51,7 +53,7 @@ public class ArtPuzzleManager : MonoBehaviour
             s.transform.position = start.artTransform.position;
 
             ArtPiece t = start.currentPiece;
-            ArtColor co = start.color;          
+            ArtColor co = start.color;
 
             start.currentPiece = switcher.currentPiece;
             switcher.currentPiece = t;
@@ -61,7 +63,7 @@ public class ArtPuzzleManager : MonoBehaviour
 
         }
 
-        
+
 
 
 
@@ -182,7 +184,7 @@ public class ArtPuzzleManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -197,12 +199,13 @@ public class ArtPuzzleManager : MonoBehaviour
             return;
         }
         if (altars[0].currentPiece == ArtPiece.VASE && altars[1].currentPiece == ArtPiece.BOTTLE && altars[2].currentPiece == ArtPiece.CRYSTAL)
+        {
+            if (altars[0].color == ArtColor.YELLOW && altars[1].color == ArtColor.BLUE && altars[2].color == ArtColor.PINK)
             {
-                if (altars[0].color == ArtColor.YELLOW && altars[1].color == ArtColor.BLUE && altars[2].color == ArtColor.PINK)
-                {
-                    GameFlags.SetFlag("gallery_puzzle_done", true);
-                    DialogueManager.Instance.StartDialogue(completePuzzle);
-                }
+                GameFlags.SetFlag("gallery_puzzle_done", true);
+                DialogueManager.Instance.StartDialogue(completePuzzle);
+                clickSfx.Play();
             }
+        }
     }
 }
