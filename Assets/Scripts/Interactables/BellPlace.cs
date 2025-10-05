@@ -29,6 +29,10 @@ public class BellPlace : Interactable
             PlaceBell();
             GameState.Instance.RemoveBell();
             GameFlags.SetFlag(flagForPlacing, true);
+            if (GameFlags.GetFlag("placed_bell1") && GameFlags.GetFlag("placed_bell2") && GameFlags.GetFlag("placed_bell3"))
+            {
+                GameFlags.SetFlag("all_bells_placed", true);
+            }
         }
         else
         {
