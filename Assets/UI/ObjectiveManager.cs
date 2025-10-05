@@ -27,9 +27,10 @@ public class ObjectiveManager : MonoBehaviour
             new Objective("level1", "Investigate the area.", new List<string> {"entered_building"}),
             new Objective("open_door", "Find a way to open the door.", new List<string> {"entered_building", "tried_door" }),
             new Objective("go_upstairs", "Get to the next floor.", new List<string> { "floor1_bell_complete" }),
+            //grand hall
             new Objective("explore", "Explore the area...", new List<string> { "floor1_bell_complete", "second_room_entered" }),
             //maritime
-            new Objective("maritime", "Look for treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room" }),
+            new Objective("maritime", "Investigate the Treasure Map.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room" }),
             new Objective("unlock_chest", "Discover new lands.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked"}),
             new Objective("get_bell", "Grab the treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_puzzle_solved" }),
             new Objective("maritime_done", "Look for some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_bell_complete" }),
@@ -40,10 +41,13 @@ public class ObjectiveManager : MonoBehaviour
             new Objective("orchestra_get_bell", "Follow the light.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete", "orchestra_room_open", "canleave_performancehall" }),
             new Objective("orchestra_done", "Look for some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_bell_complete" }),
             //painting
-            
-
-            //grand hall
-
+            new Objective("gallery", "Investigate the interesting artwork.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room" }),
+            new Objective("gallery_get_bell", "Find the matching room.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room", "gallery_puzzle_done", }),
+            new Objective("gallery_done", "Look for some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room", "gallery_bell_complete" }),
+            //all bells got
+            new Objective("all_bells", "Return to the mysterious door.", new List<string> { "floor1_bell_complete", "maritime_bell_complete", "orchestra_bell_complete", "gallery_bell_complete" }),
+            //all bells placed 
+            new Objective("bell_tower", "Ascend to the tower.", new List<string> { "floor1_bell_complete", "placed_bell1", "placed_bell2", "placed_bell3" }),
             };
             //check from last to first to find the furthest possible objective
             objectives.Reverse();

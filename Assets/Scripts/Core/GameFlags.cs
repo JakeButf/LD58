@@ -30,6 +30,7 @@ public static class GameFlags
         {"placed_bell1", false},
         {"placed_bell2", false},
         {"placed_bell3", false},
+        {"all_bells_placed", false},
     };
 
     public static bool GetFlag(string flagName)
