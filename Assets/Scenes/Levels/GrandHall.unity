@@ -4691,9 +4691,9 @@ MonoBehaviour:
   promptMessage: (E) to Inspect
   unlockedFlag: floor1_bell_complete
   lockedText: []
-  sceneToLoad: 
+  sceneToLoad: Level1
   playerPos: {x: 0, y: 0, z: 0}
-  doorOpenSfx: {fileID: 0}
+  doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
   volume: 0.3
 --- !u!1001 &1311427985
 PrefabInstance:
@@ -6079,6 +6079,94 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef090363e8e524d4bbcd727aefc9ac8b, type: 3}
+--- !u!1001 &1539690239
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.236
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7018252
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.71234924
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 269.147
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7cfb6811c41fbbf44a37e6be4e87fb3f, type: 2}
+    - target: {fileID: 919132149155446097, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      propertyPath: m_Name
+      value: DoorToMaritime
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1539690241}
+  m_SourcePrefab: {fileID: 100100000, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+--- !u!1 &1539690240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+  m_PrefabInstance: {fileID: 1539690239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1539690241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539690240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398e4947bea2c9c4cbbd50c6a113db93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlagDoor
+  promptMessage: (E) to Inspect
+  unlockedFlag: floor1_bell_complete
+  lockedText: []
+  sceneToLoad: MaritimeRoom
+  playerPos: {x: 0, y: 0, z: 0}
+  doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
+  volume: 0.3
 --- !u!1001 &1546636894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13531,5 +13619,6 @@ SceneRoots:
   - {fileID: 386931447}
   - {fileID: 1020273170}
   - {fileID: 1308500970}
+  - {fileID: 1539690239}
   - {fileID: 180716404}
   - {fileID: 615151762}

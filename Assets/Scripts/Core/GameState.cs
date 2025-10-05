@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Xml;
+using Unity.VisualScripting;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -35,6 +37,14 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (anim == null)
+        {
+            anim = GameObject.Find("BlackImage").GetComponent<Animator>();
+        }
+        if (black == null)
+        {
+            black = GameObject.Find("BlackImage").GetComponent<Image>();
+        }
 
     }
 
@@ -50,6 +60,7 @@ public class GameState : MonoBehaviour
 
     IEnumerator LoadScene(Vector3 playerPos)
     {
+
         anim.SetBool("Fade", true);
         yield return new WaitUntil(() => black.color.a == 1);
         SceneManager.LoadScene(scene);
@@ -59,6 +70,26 @@ public class GameState : MonoBehaviour
         {
             player.transform.position = playerPos;
         }
+        GameFlags.SetFlag("in_maritime_room", false);
+        GameFlags.SetFlag("in_orchestra_room", false);
+        GameFlags.SetFlag("in_art_room", false);
+        if (scene == "MaritimeRoom")
+        {
+            GameFlags.SetFlag("in_maritime_room", true);
+        }
+        if (scene == "OrchestraRoom")
+        {
+            GameFlags.SetFlag("in_orchestra_room", true);
+        }
+        if (scene == "ArtRoom")
+        {
+            GameFlags.SetFlag("in_art_room", true);
+        }
+        if (scene == "GrandHall")
+        {
+            GameFlags.SetFlag("second_room_entered", true);
+        }
+
     }
 
     public void AddBell()

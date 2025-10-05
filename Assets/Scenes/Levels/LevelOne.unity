@@ -344,7 +344,7 @@ MonoBehaviour:
   sceneToLoad: GrandHall
   playerPos: {x: 0, y: 0, z: 0}
   doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
-  volume: 0.3
+  volume: 0.786
 --- !u!1001 &150440731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1600,24 +1600,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfce81d2a74590e4bb4ab8cdc88bd333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectiveManager
-  objectiveText: {fileID: 1132062167}
+  objectiveText: {fileID: 1418957153084263322}
   objectives: []
 --- !u!4 &1129167071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
   m_PrefabInstance: {fileID: 1929959198}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1132062167 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7134441773680727486, guid: 96074fd8b1057f047a2b62fa2b8047b3, type: 3}
-  m_PrefabInstance: {fileID: 1418957153084263321}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1149793900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3330,7 +3319,7 @@ PrefabInstance:
     - target: {fileID: 5969575930890520920, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: promptText
       value: 
-      objectReference: {fileID: 1938012880}
+      objectReference: {fileID: 1852196323}
     - target: {fileID: 5969575930890520920, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: interactableMask.m_Bits
       value: 4294967295
@@ -9006,6 +8995,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef090363e8e524d4bbcd727aefc9ac8b, type: 3}
+--- !u!114 &1852196323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1249603720548969382, guid: 96074fd8b1057f047a2b62fa2b8047b3, type: 3}
+  m_PrefabInstance: {fileID: 1418957153084263321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!4 &1855129748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ef090363e8e524d4bbcd727aefc9ac8b, type: 3}
@@ -9255,17 +9255,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
---- !u!114 &1938012880 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1249603720548969382, guid: 96074fd8b1057f047a2b62fa2b8047b3, type: 3}
-  m_PrefabInstance: {fileID: 1418957153084263321}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1967216838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9695,6 +9684,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96074fd8b1057f047a2b62fa2b8047b3, type: 3}
+--- !u!114 &1418957153084263322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7134441773680727486, guid: 96074fd8b1057f047a2b62fa2b8047b3, type: 3}
+  m_PrefabInstance: {fileID: 1418957153084263321}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -9709,9 +9709,9 @@ SceneRoots:
   - {fileID: 2016700214}
   - {fileID: 1210622482}
   - {fileID: 1753335079}
-  - {fileID: 1418957153084263321}
   - {fileID: 1020273170}
   - {fileID: 20198925}
   - {fileID: 104564684}
   - {fileID: 735628518}
+  - {fileID: 1418957153084263321}
   - {fileID: 1292064325}
