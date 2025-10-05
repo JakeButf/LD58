@@ -6046,6 +6046,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ef090363e8e524d4bbcd727aefc9ac8b, type: 3}
   m_PrefabInstance: {fileID: 1518757443}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &630070679
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881911531020178408, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096060332640024043, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+      propertyPath: m_Name
+      value: Bell Toll
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+--- !u!82 &630070680 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4037878430056111886, guid: 5990135de283be340b67ef61b0f33d57, type: 3}
+  m_PrefabInstance: {fileID: 630070679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &647480823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12972,6 +13034,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6649542590179970674, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: bellSound
+      value: 
+      objectReference: {fileID: 630070680}
     - target: {fileID: 6649542590179970674, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
       propertyPath: flagToSet
       value: maritime_bell_complete
@@ -31511,3 +31577,4 @@ SceneRoots:
   - {fileID: 651115326}
   - {fileID: 1066293396}
   - {fileID: 1300541942}
+  - {fileID: 630070679}
