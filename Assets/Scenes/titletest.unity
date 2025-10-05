@@ -1600,6 +1600,7 @@ MonoBehaviour:
   director: {fileID: 388270345}
   settingsMenu: {fileID: 1508005821}
   titleMenu: {fileID: 260338410}
+  nextSceneName: Entrance
 --- !u!1 &1388765339
 GameObject:
   m_ObjectHideFlags: 0
