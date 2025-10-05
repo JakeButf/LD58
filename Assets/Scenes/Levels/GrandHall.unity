@@ -7368,6 +7368,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4460603733694497278, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460603733694497278, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
+      propertyPath: m_VolumeLayerMask.m_Bits
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 5969575930890520920, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: promptText
       value: 
@@ -7375,6 +7383,14 @@ PrefabInstance:
     - target: {fileID: 5969575930890520920, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: interactableMask.m_Bits
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342993151317326202, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
+      propertyPath: priority
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342993151317326202, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
+      propertyPath: m_IsGlobal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
