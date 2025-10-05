@@ -39,7 +39,14 @@ public class GameState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (anim == null)
+        {
+            anim = GameObject.Find("BlackImage").GetComponent<Animator>();
+        }
+        if (black == null)
+        {
+            black = GameObject.Find("BlackImage").GetComponent<Image>();
+        }
     }
 
     public void LoadScene(string scene, Vector3 playerPos = new Vector3(), Vector3 playerRot = new Vector3(), AudioClip clip = null, float volume = 1f)
@@ -96,11 +103,11 @@ public class GameState : MonoBehaviour
         {
             GameFlags.SetFlag("in_maritime_room", true);
         }
-        if (scene == "OrchestraRoom")
+        if (scene == "PerformanceHall")
         {
             GameFlags.SetFlag("in_orchestra_room", true);
         }
-        if (scene == "ArtRoom")
+        if (scene == "Gallery")
         {
             GameFlags.SetFlag("in_art_room", true);
         }

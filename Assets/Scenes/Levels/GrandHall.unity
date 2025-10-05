@@ -4478,13 +4478,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
       propertyPath: m_Name
-      value: Modular_DoorProp
+      value: DoorToArtRoom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1169902987}
   m_SourcePrefab: {fileID: 100100000, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+--- !u!1 &1169902986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: af2da0c4a7a083245ae79e10c0c38dfd, type: 3}
+  m_PrefabInstance: {fileID: 1169902985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1169902987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169902986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398e4947bea2c9c4cbbd50c6a113db93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FlagDoor
+  promptMessage: (E) to Open
+  unlockedFlag: second_room_entered
+  lockedText: []
+  sceneToLoad: Gallery
+  playerPos: {x: 0, y: 0, z: 0}
+  playerRot: {x: 0, y: 0, z: 0}
+  doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
+  volume: 0.3
 --- !u!1001 &1183377835
 PrefabInstance:
   m_ObjectHideFlags: 0

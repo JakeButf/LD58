@@ -21,7 +21,9 @@ public class ObjectiveManager : MonoBehaviour
 
             objectives = new List<Objective>
         {
+            //entrance
             new Objective("enter_building", "Enter the mysterious place.", new List<string> { }),
+            //level 1
             new Objective("level1", "Investigate the area.", new List<string> {"entered_building"}),
             new Objective("open_door", "Find a way to open the door.", new List<string> {"entered_building", "tried_door" }),
             new Objective("go_upstairs", "Get to the next floor.", new List<string> { "floor1_bell_complete" }),
@@ -30,14 +32,19 @@ public class ObjectiveManager : MonoBehaviour
             new Objective("maritime", "Look for treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room" }),
             new Objective("unlock_chest", "Discover new lands.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked"}),
             new Objective("get_bell", "Grab the treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_puzzle_solved" }),
-            new Objective("maritime_done", "Look for the some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_bell_revealed", "maritime_bell_complete" })
-                //orchestra
-
-                //painting
+            new Objective("maritime_done", "Look for the some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_bell_complete" }),
+            //orchestra
+            new Objective("orchestra", "Investigate the peculiar orchestra.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room" }),
+            new Objective("orchestra_puzzle_complete", "Speak with the conductor.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete" }),
+            new Objective("orchestra_music_playing", "Enjoy the music.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete", "orchestra_room_open" }),
+            new Objective("orchestra_get_bell", "Follow the light.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete", "orchestra_room_open", "canleave_performancehall" }),
+            new Objective("orchestra_done", "Look for the some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_bell_complete" }),
+            //painting
             
-                //grand hall
 
-        };
+            //grand hall
+
+            };
             //check from last to first to find the furthest possible objective
             objectives.Reverse();
         }

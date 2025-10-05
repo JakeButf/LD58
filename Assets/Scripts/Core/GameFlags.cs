@@ -24,7 +24,8 @@ public static class GameFlags
         {"in_orchestra_room", false},
         {"in_art_room", false},
         {"canleave_performancehall",true },
-        {"art_puzzle_done", false}
+        {"orchestra_bell_complete", false},
+        { "art_puzzle_done", false}
     };
 
     public static bool GetFlag(string flagName)
