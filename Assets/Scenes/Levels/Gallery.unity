@@ -9934,16 +9934,16 @@ MonoBehaviour:
       to release it.
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
-    ghostEffect: 0
+    ghostEffect: 1
   - text: 'When you ring the tower, remember:'
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
-    ghostEffect: 0
+    ghostEffect: 1
   - text: Creation was never meant to last. Collect our melody and play it to the
       sky.
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
-    ghostEffect: 0
+    ghostEffect: 1
 --- !u!135 &1421950758
 SphereCollider:
   m_ObjectHideFlags: 0
