@@ -7,16 +7,28 @@ public class BellPlace : Interactable
     [SerializeField] private GameObject bellModel;
     private bool bellToPlace = false;
 
+    [SerializeField] private string flagForPlacing;
+
     private void OnEnable() => GameState.OnBellCountChanged += ChangeState;
     private void OnDisable() => GameState.OnBellCountChanged -= ChangeState;
+
+    public void Awake()
+    {
+        if (GameFlags.GetFlag(flagForPlacing))
+        {
+            PlaceBell();
+        }
+        ChangeState();
+    }
+
 
     public override void Interact()
     {
         if (bellToPlace)
         {
-            bellModel.SetActive(true);
+            PlaceBell();
             GameState.Instance.RemoveBell();
-            GameObject.Destroy(this);
+            GameFlags.SetFlag(flagForPlacing, true);
         }
         else
         {
@@ -24,7 +36,7 @@ public class BellPlace : Interactable
         }
 
     }
-    
+
     public void ChangeState()
     {
         if (GameState.Instance.bellInventory > 0)
@@ -39,4 +51,9 @@ public class BellPlace : Interactable
         }
     }
 
+    public void PlaceBell()
+    {
+        bellModel.SetActive(true);
+        GameObject.Destroy(this);
+    }
 }

@@ -17119,6 +17119,67 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1001 &1787164972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1225504
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.051
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649542590179970674, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: flagToSet
+      value: orchestra_bell_complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 6688175663406837609, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
+      propertyPath: m_Name
+      value: PickUpBell
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
 --- !u!1001 &1801810255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18509,3 +18570,4 @@ SceneRoots:
   - {fileID: 1172856144}
   - {fileID: 1919751277}
   - {fileID: 914156169}
+  - {fileID: 1787164972}

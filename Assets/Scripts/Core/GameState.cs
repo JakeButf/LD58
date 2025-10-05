@@ -87,6 +87,7 @@ public class GameState : MonoBehaviour
     // display as many bells as in inventory
     public void DisplayBells()
     {
+        Debug.Log("Displaying " + bellInventory + " bells.");
         for (int i = 0; i < 3; i++)
         {
             if (i < bellInventory) GameObject.Find("Bell" + (i + 1)).GetComponent<Image>().enabled = true;
@@ -98,7 +99,7 @@ public class GameState : MonoBehaviour
     {
         GameFlags.SetFlag("in_maritime_room", false);
         GameFlags.SetFlag("in_orchestra_room", false);
-        GameFlags.SetFlag("in_art_room", false);
+        GameFlags.SetFlag("in_gallery_room", false);
         if (scene == "MaritimeRoom")
         {
             GameFlags.SetFlag("in_maritime_room", true);
@@ -109,7 +110,7 @@ public class GameState : MonoBehaviour
         }
         if (scene == "Gallery")
         {
-            GameFlags.SetFlag("in_art_room", true);
+            GameFlags.SetFlag("in_gallery_room", true);
         }
         if (scene == "GrandHall")
         {
@@ -119,7 +120,7 @@ public class GameState : MonoBehaviour
         {
             GameFlags.SetFlag("entered_building", true);
         }
-
+        DisplayBells();
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -18,14 +18,18 @@ public static class GameFlags
         {"maritime_chest_unlocked", false},
         {"maritime_puzzle_solved", false},
         {"maritime_bell_complete", false},
-        { "orchestra_complete", false},
+        {"orchestra_complete", false},
         {"orchestra_open", false},
         {"orchestra_room_open", false},
         {"in_orchestra_room", false},
-        {"in_art_room", false},
+        {"in_gallery_room", false},
         {"canleave_performancehall",true },
         {"orchestra_bell_complete", false},
-        { "art_puzzle_done", false}
+        {"gallery_puzzle_done", false},
+        {"gallery_bell_complete", false},
+        {"placed_bell1", false},
+        {"placed_bell2", false},
+        {"placed_bell3", false},
     };
 
     public static bool GetFlag(string flagName)
