@@ -15,18 +15,20 @@ public class ObjectiveManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
 
-        DontDestroyOnLoad(gameObject);
-
-        Objective.ResetFlagChain(); // start clean
-
-        objectives = new List<Objective>
+            objectives = new List<Objective>
         {
             new Objective("open_door", "Find a way to open the door.", new List<string> { "floor1_bell_complete" }),
             new Objective("go_upstairs", "Get to the next floor.", new List<string> { "second_room_entered" })
         };
+        }
+        else Destroy(gameObject);
+        
+        DontDestroyOnLoad(gameObject);
+        Objective.ResetFlagChain(); // start clean
         UpdateObjectiveText();
     }
 
