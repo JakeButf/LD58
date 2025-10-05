@@ -2728,6 +2728,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 413849d674ae96c40b09a31b9cad5005, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 955ede8f3d1f71d4688fdf215632328f, type: 2}
     - target: {fileID: 919132149155446097, guid: 413849d674ae96c40b09a31b9cad5005, type: 3}
       propertyPath: m_Name
       value: Modular_PillarFloor (2)
@@ -13803,6 +13807,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 413849d674ae96c40b09a31b9cad5005, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 955ede8f3d1f71d4688fdf215632328f, type: 2}
     - target: {fileID: 919132149155446097, guid: 413849d674ae96c40b09a31b9cad5005, type: 3}
       propertyPath: m_Name
       value: Modular_PillarFloor (3)
