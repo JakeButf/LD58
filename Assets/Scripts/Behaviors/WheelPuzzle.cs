@@ -37,6 +37,10 @@ public class WheelPuzzle : MonoBehaviour
         UnloadAllObjects();
         LoadObjects();
         ghosts[currentShipPos].SetActive(true);
+        if (currentShipPos == 4)
+        {
+            GameFlags.SetFlag("maritime_puzzle_solved", true);
+        }
         StartCoroutine(RotateOverTime(0.5f, 180));
     }
 

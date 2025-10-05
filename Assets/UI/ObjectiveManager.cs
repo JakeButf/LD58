@@ -8,70 +8,74 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private TMP_Text objectiveText;
     [SerializeField] private List<Objective> objectives = new List<Objective>();
 
-    private int currentObjectiveIndex = 0;
+    private Objective currentObjective;
 
-    private void OnEnable() => GameFlags.OnFlagsUpdated += CheckObjectiveProgress;
-    private void OnDisable() => GameFlags.OnFlagsUpdated -= CheckObjectiveProgress;
+    private void OnEnable() => GameFlags.OnFlagsUpdated += UpdateObjective;
+    private void OnDisable() => GameFlags.OnFlagsUpdated -= UpdateObjective;
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+
+            objectives = new List<Objective>
+        {
+            new Objective("open_door", "Find a way to open the door.", new List<string> { }),
+            new Objective("go_upstairs", "Get to the next floor.", new List<string> { "floor1_bell_complete" }),
+            new Objective("explore", "Explore the area...", new List<string> { "floor1_bell_complete", "second_room_entered" }),
+            //maritime
+            new Objective("maritime", "Look for treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room" }),
+            new Objective("unlock_chest", "Discover new lands.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked"}),
+            new Objective("get_bell", "Grab the treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_puzzle_solved" }),
+            new Objective("maritime_done", "Look for the some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_bell_revealed", "maritime_bell_complete" })
+                //orchestra
+
+                //painting
+            
+                //grand hall
+
+        };
+            //check from last to first to find the furthest possible objective
+            objectives.Reverse();
+        }
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-
-        Objective.ResetFlagChain(); // start clean
-
-        objectives = new List<Objective>
-        {
-            new Objective("open_door", "Find a way to open the door.", new List<string> { "floor1_bell_complete" }),
-            new Objective("go_upstairs", "Get to the next floor.", new List<string> { "second_room_entered" })
-        };
-        UpdateObjectiveText();
+        UpdateObjective();
     }
 
+    void Update()
+    {
+        if (objectiveText == null)
+        {
+            objectiveText = GameObject.Find("ObjectiveText").GetComponent<TMP_Text>();
+            UpdateObjective();
+        }
+    }
 
     //check if we completed the current objective whenever a flag is updated
-    private void CheckObjectiveProgress()
+    public void UpdateObjective()
     {
-        if (currentObjectiveIndex >= objectives.Count)
-            return;
-
-        var current = objectives[currentObjectiveIndex];
-
-        bool allFlagsTrue = true;
-        foreach (var flag in current.requiredFlagsToComplete)
+        foreach (var obj in objectives)
         {
-            if (!GameFlags.GetFlag(flag))
+            bool allFlagsTrue = true;
+
+            foreach (var flag in obj.requiredFlags)
             {
-                allFlagsTrue = false;
-                break;
+                if (!GameFlags.GetFlag(flag))
+                {
+                    allFlagsTrue = false;
+                    break;
+                }
             }
-        }
 
-        if (allFlagsTrue)
-        {
-            AdvanceObjective();
-        }
-    }
-
-    //move to the next objective
-    private void AdvanceObjective()
-
-    {
-        currentObjectiveIndex++;
-        UpdateObjectiveText();
-    }
-
-    private void UpdateObjectiveText()
-    {
-        if (currentObjectiveIndex < objectives.Count)
-        {
-            objectiveText.text = objectives[currentObjectiveIndex].description;
-        }
-        else
-        {
-            objectiveText.text = "All objectives completed!";
+            if (allFlagsTrue)
+            {
+                currentObjective = obj;
+                objectiveText.text = obj.description;
+                return;
+            }
         }
     }
 }
