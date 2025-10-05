@@ -7,6 +7,8 @@ public class FlagDoor : Interactable
     [SerializeField] string[] lockedText;
     [SerializeField] string sceneToLoad;
     [SerializeField] Vector3 playerPos;
+    [SerializeField] Vector3 playerRot;
+
     [SerializeField] AudioClip doorOpenSfx;
  
     [SerializeField][Range(0f, 1f)] private float volume = .3f;
@@ -19,7 +21,7 @@ public class FlagDoor : Interactable
         }
         else
         {
-            GameState.Instance.LoadScene(sceneToLoad, playerPos, doorOpenSfx, volume);
+            GameState.Instance.LoadScene(sceneToLoad, playerPos, playerRot, doorOpenSfx, volume);
         }
     }
 }

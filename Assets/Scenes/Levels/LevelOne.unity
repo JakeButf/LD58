@@ -343,6 +343,7 @@ MonoBehaviour:
   - The door will not budge...
   sceneToLoad: GrandHall
   playerPos: {x: 0, y: 0, z: 0}
+  playerRot: {x: 0, y: 0, z: 0}
   doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
   volume: 0.786
 --- !u!1001 &150440731
@@ -3278,15 +3279,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2678326879291287995, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 2678326879291287995, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.52
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 2678326879291287995, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.73
+      value: -2.79
       objectReference: {fileID: 0}
     - target: {fileID: 2678326879291287995, guid: d357e9b4503eed242818b0075c4473c4, type: 3}
       propertyPath: m_LocalRotation.w

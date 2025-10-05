@@ -3,7 +3,10 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public enum CrystalInstruments
 {
-    PIANO
+    Piano,
+    Strings,
+    Bass,
+    Organ
 }
 
 public class CrystalOrchestra : Interactable
@@ -13,7 +16,7 @@ public class CrystalOrchestra : Interactable
     [SerializeField] float beamMaxDistance = 50f;
 
     [SerializeField] CrystalInstruments instrument;
-    [SerializeField] public bool activated;
+    [SerializeField] private bool activated;
     [SerializeField] LayerMask crystalMask;
     [SerializeField] GameObject spotLight;
     [SerializeField] public AudioSource aud;
@@ -56,9 +59,9 @@ public class CrystalOrchestra : Interactable
         currentY = transform.eulerAngles.y;
         float newY = Mathf.MoveTowardsAngle(currentY, desiredRotation, rotationSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(-2f, newY, 0f);
-        
 
-        if (linkedCrystal != null && !linkedCrystal.alwaysActive) linkedCrystal.activated = false;
+
+        if (linkedCrystal != null && !linkedCrystal.alwaysActive) linkedCrystal.ChangeState(false);
         linkedCrystal = null;
         if (!activated)
         {
@@ -71,12 +74,12 @@ public class CrystalOrchestra : Interactable
             if (other != null)
             {
                 linkedCrystal = other;
-                linkedCrystal.activated = true;
+                linkedCrystal.ChangeState(true);
                 return;
             }
         }
 
-        
+
     }
 
     public override void Interact()
@@ -92,8 +95,23 @@ public class CrystalOrchestra : Interactable
     }
 
 
+    public void ChangeState(bool activated)
+    {
+        this.activated = activated;
+        if (activated)
+        {
+            this.promptMessage = "(E) to rotate " + instrument.ToString();
+        }
+        else
+        {
+            this.promptMessage = "(E) to rotate";
+        }
+    }
 
-    
+    public bool getActivated()
+    {
+        return activated;
+    }
 
 
 }

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelOne.unity
     guid: d9093dedb7295234ea6bb2621bf38a80
   - enabled: 1
+    path: Assets/Scenes/Levels/PerformanceHall.unity
+    guid: eb189c55dddf2ed4286d770f1c115da2
+  - enabled: 1
     path: Assets/Scenes/Levels/MaritimeRoom.unity
     guid: f2ecd5357cdd01148893bf47b93e8383
   - enabled: 0
