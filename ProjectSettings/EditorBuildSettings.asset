@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/MaritimeRoom.unity
     guid: f2ecd5357cdd01148893bf47b93e8383
+  - enabled: 1
+    path: Assets/Scenes/titletest.unity
+    guid: e24f65363b979e144964a3a8f408c40f
   - enabled: 0
     path: Assets/Scenes/Scene2.unity
     guid: 24477ffe476a9a34dbf922e426756d32
@@ -29,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TopOfTower.unity
     guid: 0742e891e09473c48853e05de55218ca
+  - enabled: 1
+    path: Assets/Scenes/Entrance.unity
+    guid: a6ba02210a0d8514b9cebc37f56a9c06
   - enabled: 0
     path: Assets/Scenes/PlayerTest.unity
     guid: 3cf0a87a0e7541840bd97d1aa7e1e325
