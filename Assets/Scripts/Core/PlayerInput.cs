@@ -9,7 +9,7 @@ public static class PlayerInput
     public static KeyCode Jump { get; private set; }
     public static KeyCode Interact { get; private set; }
     public static KeyCode Escape { get; private set; }
-    public static float MouseSensitivity { get; private set; } 
+    public static float MouseSensitivity { get; private set; } = 1f;
 
     public static void Initialize()
     {
