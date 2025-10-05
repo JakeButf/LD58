@@ -11,7 +11,6 @@ public static class GameFlags
         {"floor1_bell_complete", false},
         {"second_room_entered", false},
         {"player_can_move", true},
-        {"maritime_chest_unlocked", false},
         {"in_maritime_room", false},
         {"maritime_chest_unlocked", false},
         {"maritime_puzzle_solved", false},
