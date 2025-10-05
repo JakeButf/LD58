@@ -11,7 +11,10 @@ public static class GameFlags
         {"floor1_bell_complete", false},
         {"second_room_entered", false},
         {"player_can_move", true},
-        {"maritime_chest_unlocked", false}
+        {"maritime_chest_unlocked", false},
+        {"orchestra_complete", false},
+        {"orchestra_open", false},
+        {"orchestra_room_open", false}
     };
 
     public static bool GetFlag(string flagName)
