@@ -6617,7 +6617,8 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"Here is where I shall lie my treasure. Marked by this great voyage.\u201D"
+  - text: "\"Here is where I shall lie my treasure. It will be marked by the path
+      of this great voyage.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -7007,7 +7008,7 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"It beamed down to me, the light of the world.\u201D"
+  - text: "\"It beamed down to me, that light of the world.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -7015,7 +7016,7 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"I can hear it. A pulse beneath the waves... Waiting to break surface.\u201D"
+  - text: "\"A pulse beneath the waves... Waiting to break surface.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -12888,7 +12889,7 @@ Transform:
   m_GameObject: {fileID: 1210622478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.705, y: 0.967, z: 0.66}
+  m_LocalPosition: {x: 1.967, y: 0.967, z: -1.427}
   m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -12915,11 +12916,7 @@ MonoBehaviour:
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
-  - text: "\"The voyage. I must not forget.\u201D"
-    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
-    charClip: {fileID: 0}
-    ghostEffect: 1
-  - text: "\"The sea is dark tonight. I remember a light that was not warmth.\u201D"
+  - text: "\"I depart tonight. I seek a light that was not warmth.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -19144,15 +19141,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
   promptMessage: (E) to Inspect
   dialogueLines:
-  - text: "\"The tide stopped for you once before, didn't it?\u201D"
+  - text: The tide stopped for you once before, didn't it?
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"We waited in the tower, listening for the bell to ring again.\u201D"
+  - text: We waited in the tower, listening for the bell to ring again.
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"Here you are, walking amongst the wreckage. Collecting the echoes.\u201D"
+  - text: Here you are, walking amongst the wreckage. Collecting it's echoes.
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -31215,8 +31212,8 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"I fed it's hunger with my sails, praying the torch would not cast me
-      astray.\u201D"
+  - text: "\"It's fiery rage devoured my sails, casting me ashore a place unfamiliar
+      to me.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1

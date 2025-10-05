@@ -10652,7 +10652,8 @@ MonoBehaviour:
   - Please...
   - Listen to us play...
   doneLines:
-  - "The silence\u2026 it isn\u2019t failure, is it? It\u2019s your song."
+  - Beautiful isn't it?
+  - Though I wonder if you have finished composing your own.
   - "You\u2019ve come to take the rest of us, haven\u2019t you? The final performance."
   - "Then\u2026 at least let it be in tune."
   ghostEffect: 1
@@ -17780,6 +17781,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+--- !u!1001 &1880762821
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2016700214}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.99999976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.85
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 955ede8f3d1f71d4688fdf215632328f, type: 2}
+    - target: {fileID: 919132149155446097, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+      propertyPath: m_Name
+      value: Modular_Wall (27)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+--- !u!4 &1880762822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 789845e1b5b60a34b85f7548ce34ab41, type: 3}
+  m_PrefabInstance: {fileID: 1880762821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901162476
 GameObject:
   m_ObjectHideFlags: 0
@@ -18241,6 +18308,7 @@ Transform:
   - {fileID: 692808756}
   - {fileID: 1431411209}
   - {fileID: 1058572029}
+  - {fileID: 1880762822}
   - {fileID: 1532980527}
   - {fileID: 757702433}
   - {fileID: 1006529}
