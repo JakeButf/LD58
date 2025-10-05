@@ -26,12 +26,16 @@ public class CrystalPuzzle : MonoBehaviour
 
     void Awake()
     {
+        if (GameFlags.GetFlag("orchestra_room_open"))
+        {
+            openWall();
+        }
         startTime = AudioSettings.dspTime + 0.2f;
         PlayLoop(piano);
         PlayLoop(strings);
         PlayLoop(bass);
         PlayLoop(organ);
-        piano.activated = true;
+        piano.ChangeState(true);
         started = true;
     }
 
@@ -64,11 +68,11 @@ public class CrystalPuzzle : MonoBehaviour
 
     void FadeInIfActive(CrystalOrchestra crystal)
     {
-        if (crystal.activated && crystal.aud.volume < 1f)
+        if (crystal.getActivated() && crystal.aud.volume < 1f)
         {
             crystal.aud.volume += Time.deltaTime / fadeInSpeed;
         }
-        else if (!crystal.activated && crystal.aud.volume > 0f)
+        else if (!crystal.getActivated() && crystal.aud.volume > 0f)
         {
             crystal.aud.volume -= Time.deltaTime / fadeInSpeed;
         }
@@ -115,13 +119,12 @@ public class CrystalPuzzle : MonoBehaviour
 
         if (GameFlags.GetFlag("orchestra_room_open") && !piano.aud.isPlaying)
         {
-            if (wall.activeSelf) wall.SetActive(false);
-            if (!door.activeSelf) door.SetActive(true);
-
+            GameFlags.SetFlag("canleave_performancehall", true);
             FaceTarget(piano);
             FaceTarget(strings);
             FaceTarget(bass);
             FaceTarget(organ);
+            openWall();
         }
     }
     void FaceTarget(CrystalOrchestra crystal)
@@ -129,7 +132,7 @@ public class CrystalPuzzle : MonoBehaviour
         if (door == null) return;
 
         Vector3 direction = door.transform.position - crystal.transform.position;
-        direction.y = 0f; 
+        direction.y = 0f;
 
         if (direction.sqrMagnitude > 0.01f)
         {
@@ -140,6 +143,12 @@ public class CrystalPuzzle : MonoBehaviour
                 Time.deltaTime * rotateSpeed
             );
         }
-}
+    }
+
+    void openWall()
+    {
+        if (wall.activeSelf) wall.SetActive(false);
+        if (!door.activeSelf) door.SetActive(true);
+    }
 
 }
