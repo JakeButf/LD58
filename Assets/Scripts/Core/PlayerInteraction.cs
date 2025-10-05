@@ -3,7 +3,7 @@ using TMPro; // for UI prompt text
 
 public class PlayerInteractor : MonoBehaviour
 {
-    [SerializeField] private float interactionRange = 3f;
+    [SerializeField] private float interactionRange = 2f;
     [SerializeField] private LayerMask interactableMask;
     [SerializeField] private TMP_Text promptText; // UI element in canvas
 

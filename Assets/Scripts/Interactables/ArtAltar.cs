@@ -25,7 +25,7 @@ public class ArtAltar : Interactable
     bool interacted;
     public override void Interact()
     {
-        if (GameFlags.GetFlag("art_puzzle_done")) return;
+        if (GameFlags.GetFlag("gallery_puzzle_done")) return;
         GameFlags.SetFlag("player_can_move", false);
         DialogueManager.Instance.StartDialogue(interactText);
         puzzle.UpdateSelectedPiece(this.currentPiece);

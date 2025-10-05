@@ -188,7 +188,7 @@ public class ArtPuzzleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameFlags.GetFlag("art_puzzle_done"))
+        if (GameFlags.GetFlag("gallery_puzzle_done"))
         {
             if (prePainter.activeSelf) prePainter.SetActive(false);
             if (!postPainter.activeSelf) postPainter.SetActive(true);
@@ -200,7 +200,7 @@ public class ArtPuzzleManager : MonoBehaviour
             {
                 if (altars[0].color == ArtColor.YELLOW && altars[1].color == ArtColor.BLUE && altars[2].color == ArtColor.PINK)
                 {
-                    GameFlags.SetFlag("art_puzzle_done", true);
+                    GameFlags.SetFlag("gallery_puzzle_done", true);
                     DialogueManager.Instance.StartDialogue(completePuzzle);
                 }
             }
