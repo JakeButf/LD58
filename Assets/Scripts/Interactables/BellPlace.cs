@@ -32,6 +32,7 @@ public class BellPlace : Interactable
             if (GameFlags.GetFlag("placed_bell1") && GameFlags.GetFlag("placed_bell2") && GameFlags.GetFlag("placed_bell3"))
             {
                 GameFlags.SetFlag("all_bells_placed", true);
+                DialogueManager.Instance.StartDialogue(new string[] { "All the bells are in place. You hear a clicking sound." }, false);
             }
         }
         else
