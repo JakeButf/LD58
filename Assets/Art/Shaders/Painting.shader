@@ -12,11 +12,11 @@ Shader "Custom/Painting"
 
     SubShader
     {
-        Tags { "RenderType"="Opaque" "Queue"="Overlay" }
+        Tags { "RenderType"="Opaque" "Queue"="Geometry" }
         Pass
         {
             Name "OilPaintVoronoiPass"
-            ZTest Always Cull Off ZWrite Off
+            ZTest LEqual Cull Back ZWrite On
             HLSLPROGRAM
             #pragma vertex vert_img
             #pragma fragment frag

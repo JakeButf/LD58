@@ -33,6 +33,7 @@ public class WheelPuzzle : MonoBehaviour
     {
         if (currentShipPos == shipPositions.Length) return;
         if (currentShipPos == 3 && GameFlags.GetFlag("maritime_chest_unlocked") == false) return;
+        if(currentShipPos + 1 >= shipPositions.Length) return;
         currentShipPos++;
         UnloadAllObjects();
         LoadObjects();
@@ -47,6 +48,7 @@ public class WheelPuzzle : MonoBehaviour
     public void MoveLeft()
     {
         if (currentShipPos == 0) return;
+        if (currentShipPos + 1 <= 0) return;
         currentShipPos--;
         UnloadAllObjects();
         LoadObjects();
