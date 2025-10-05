@@ -4693,10 +4693,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
   promptMessage: (E) to Inspect
   dialogueLines:
-  - text: 
+  - text: "You hear a whisper underneath the specters hum\u2026"
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
+  - text: '"He will arrive soon. His voice alongside the toll of the grand lady will
+      save us all."'
+    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
+    charClip: {fileID: 0}
+    ghostEffect: 1
 --- !u!1001 &1217377912
 PrefabInstance:
   m_ObjectHideFlags: 0
