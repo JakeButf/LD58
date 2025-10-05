@@ -8518,7 +8518,11 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: '"Art should always begin in vanity, hold the truth, and pass through memory."'
+  - text: '"Art should always begin in decore, hold the truth, and pass through memory."'
+    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
+    charClip: {fileID: 0}
+    ghostEffect: 1
+  - text: '"And that crystal... It should be faint and fragile, almost blushing."'
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -16480,15 +16484,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.401
+      value: 4.072
       objectReference: {fileID: 0}
     - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.533
+      value: 1.175
       objectReference: {fileID: 0}
     - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.261
+      value: -7.903
       objectReference: {fileID: 0}
     - target: {fileID: 6312635970037921235, guid: 8fe4f1703de33e34387bb059ec6884b5, type: 3}
       propertyPath: m_LocalRotation.w
