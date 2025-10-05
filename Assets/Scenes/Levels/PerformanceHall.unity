@@ -598,7 +598,7 @@ MonoBehaviour:
   activated: 0
   crystalMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   spotLight: {fileID: 1435737385}
   aud: {fileID: 1560039439}
   defaultVolume: 0.6
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   activated: 0
   crystalMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   spotLight: {fileID: 1141134373}
   aud: {fileID: 1266213802}
   defaultVolume: 0.6
@@ -10821,7 +10821,7 @@ MonoBehaviour:
   activated: 1
   crystalMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   spotLight: {fileID: 921053798}
   aud: {fileID: 77163726}
   defaultVolume: 0.6
@@ -18360,7 +18360,7 @@ MonoBehaviour:
   activated: 0
   crystalMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   spotLight: {fileID: 229079262}
   aud: {fileID: 1971987158}
   defaultVolume: 0.6
