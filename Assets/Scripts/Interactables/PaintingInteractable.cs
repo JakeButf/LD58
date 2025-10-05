@@ -9,7 +9,7 @@ public class PaintingInteractable : Interactable
     bool interacted = false;
     public override void Interact()
     {
-        if (GameFlags.GetFlag("art_puzzle_done")) return;
+        if (GameFlags.GetFlag("gallery_puzzle_done")) return;
         GameFlags.SetFlag("player_can_move", false);
         DialogueManager.Instance.StartDialogue(interactLines);
         interacted = true;

@@ -111,10 +111,11 @@ public class CrystalPuzzle : MonoBehaviour
             postSpectre.SetActive(true);
         }
 
-        if (GameFlags.GetFlag("orchestra_complete"))
+        if (GameFlags.GetFlag("orchestra_complete") && !swapped)
         {
             StopAndSwapToFull();
             swapped = true;
+            DialogueManager.Instance.StartDialogue(new string[] { "The conductor suddenly silences the orchestra." }, false);
         }
 
         if (GameFlags.GetFlag("orchestra_room_open") && !piano.aud.isPlaying)
