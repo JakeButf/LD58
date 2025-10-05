@@ -6,7 +6,8 @@ public class BellPuzzleInteractable : Interactable
     [SerializeField] int bellID;
     [SerializeField] static string[] completedDialog = {"You hear a clicking noise."};
     private AudioSource audio;
-    static int[] reference = {2, 3, 2, 3, 2, 1};
+    [SerializeField] private AudioSource clickSfx;
+    static int[] reference = { 2, 3, 2, 3, 2, 1 };
     static List<int> tollOrder = new List<int>();
 
     void Awake()
@@ -26,6 +27,7 @@ public class BellPuzzleInteractable : Interactable
         {
             GameFlags.SetFlag("floor1_bell_complete", true);
             DialogueManager.Instance.StartDialogue(completedDialog);
+            clickSfx.Play();
         }
     }
     
