@@ -7,6 +7,7 @@ public class StartEnd : Interactable
     [SerializeField] Animation camAnim;
     [SerializeField] StartEnd other;
     [SerializeField] AudioSource bell;
+    [SerializeField] GameObject playerUI;
 
     public override void Interact()
     {
@@ -20,6 +21,7 @@ public class StartEnd : Interactable
     {
         other.SwitchCamera();
         bell.Play();
+        playerUI.SetActive(false);
     }
 
     public void SwitchCamera()
