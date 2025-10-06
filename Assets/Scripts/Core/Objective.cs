@@ -9,7 +9,6 @@ public class Objective
     public List<string> requiredFlags;
 
 
-    // 🔒 Static accumulator shared across all Objective instances
 
     public Objective(string id, string desc, List<string> newFlags)
     {

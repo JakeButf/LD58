@@ -22,7 +22,7 @@ public class ObjectiveManager : MonoBehaviour
             objectives = new List<Objective>
         {
             //entrance
-            new Objective("enter_building", "Enter the mysterious place.", new List<string> { }),
+            new Objective("enter_building", "Enter the bell tower.", new List<string> { }),
             //level 1
             new Objective("level1", "Investigate the area.", new List<string> {"entered_building"}),
             new Objective("open_door", "Find a way to open the door.", new List<string> {"entered_building", "tried_door" }),
@@ -32,18 +32,18 @@ public class ObjectiveManager : MonoBehaviour
             //maritime
             new Objective("maritime", "Investigate the Treasure Map.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room" }),
             new Objective("unlock_chest", "Discover new lands.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked"}),
-            new Objective("get_bell", "Grab the treasure.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_puzzle_solved" }),
-            new Objective("maritime_done", "Look for some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_bell_complete" }),
+            new Objective("get_bell", "Grab the Maritime Bell.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_chest_unlocked", "maritime_puzzle_solved" }),
+            new Objective("maritime_done", "Investigate the rest of the tower.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_maritime_room", "maritime_bell_complete" }),
             //orchestra
-            new Objective("orchestra", "Investigate the peculiar orchestra.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room" }),
+            new Objective("orchestra", "Investigate the crystal orchestra.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room" }),
             new Objective("orchestra_puzzle_complete", "Speak with the conductor.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete" }),
-            new Objective("orchestra_music_playing", "Enjoy the music.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete", "orchestra_room_open" }),
+            new Objective("orchestra_music_playing", "Listen to the performance.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete", "orchestra_room_open" }),
             new Objective("orchestra_get_bell", "Follow the light.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_complete", "orchestra_room_open", "canleave_performancehall" }),
-            new Objective("orchestra_done", "Look for some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_bell_complete" }),
+            new Objective("orchestra_done", "Investigate the rest of the tower.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_orchestra_room", "orchestra_bell_complete" }),
             //painting
-            new Objective("gallery", "Investigate the interesting artwork.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room" }),
+            new Objective("gallery", "Investigate the strange artwork.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room" }),
             new Objective("gallery_get_bell", "Find the matching room.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room", "gallery_puzzle_done", }),
-            new Objective("gallery_done", "Look for some more bells.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room", "gallery_bell_complete" }),
+            new Objective("gallery_done", "Investigate the rest of the tower.", new List<string> { "floor1_bell_complete", "second_room_entered", "in_gallery_room", "gallery_bell_complete" }),
             //all bells got
             new Objective("all_bells", "Return to the mysterious door.", new List<string> { "floor1_bell_complete", "maritime_bell_complete", "orchestra_bell_complete", "gallery_bell_complete" }),
             //all bells placed 
