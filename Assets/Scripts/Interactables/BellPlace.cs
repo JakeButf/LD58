@@ -53,7 +53,7 @@ public class BellPlace : Interactable
         else
         {
             bellToPlace = false;
-            promptMessage = "Inspect";
+            promptMessage = "(E) to Inspect";
         }
     }
 
