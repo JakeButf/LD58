@@ -34,6 +34,9 @@ public class PaintingInteractable : Interactable
         if (puzzleUI.activeSelf && Input.GetKeyDown(PlayerInput.Escape))
         {
             puzzleUI.SetActive(false);
+            GameFlags.SetFlag("player_can_move", true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
