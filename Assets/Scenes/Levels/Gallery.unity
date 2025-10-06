@@ -8490,11 +8490,7 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: '"Art should always begin in decore, hold the truth, and pass through memory."'
-    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
-    charClip: {fileID: 0}
-    ghostEffect: 1
-  - text: '"And that crystal... It should be faint and fragile, almost blushing."'
+  - text: '"Art should always begin in decor, hold the truth, and pass through memory."'
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -8503,6 +8499,10 @@ MonoBehaviour:
     charClip: {fileID: 0}
     ghostEffect: 1
   - text: '"The bottle? No, NO! It must soothe those who gaze upon it"'
+    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
+    charClip: {fileID: 0}
+    ghostEffect: 1
+  - text: '"And that crystal... It should be faint and fragile, almost blushing."'
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
