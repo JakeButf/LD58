@@ -125,27 +125,22 @@ public class GameState : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        StartCoroutine(HandleSceneLoad(scene));
+    }
 
-        if (anim == null)
-        {
-            anim = GameObject.Find("BlackImage").GetComponent<Animator>();
-        }
-        if (black == null)
-        {
-            black = GameObject.Find("BlackImage").GetComponent<Image>();
-        }
-        anim.SetBool("Fade", false);
-
+    IEnumerator HandleSceneLoad(Scene scene)
+    {
+        yield return null; // wait one frame
+        anim = GameObject.Find("BlackImage")?.GetComponent<Animator>();
+        black = GameObject.Find("BlackImage")?.GetComponent<Image>();
         GameObject player = GameObject.Find("Player");
 
         if (player != null && playerPos != Vector3.zero)
-        {
             player.transform.position = playerPos;
-        }
         if (player != null && playerRot != Vector3.zero)
-        {
             player.transform.rotation = Quaternion.Euler(playerRot);
-        }
+
+        anim?.SetBool("Fade", false);
         SetSceneState();
     }
 }
