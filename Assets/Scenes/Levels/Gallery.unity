@@ -7098,7 +7098,7 @@ MonoBehaviour:
   lockedText: []
   sceneToLoad: GrandHall
   playerPos: {x: 4, y: 1, z: -16}
-  playerRot: {x: 0, y: -90, z: 0}
+  playerRot: {x: 0, y: -10, z: 0}
   doorOpenSfx: {fileID: 8300000, guid: a72025c1fbb766240bb9441e752ee289, type: 3}
   volume: 0.755
 --- !u!1001 &918302883
