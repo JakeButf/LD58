@@ -1985,6 +1985,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1361020604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd87c350ade6dcc41930dd5ef228a4e2, type: 3}
+  m_PrefabInstance: {fileID: 1963447685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1361020605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361020604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b59014f2ad7e7458c42f38e9e5e1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
+  promptMessage: (E) to Read
+  dialogueLines:
+  - text: Here stands the vessel of our deliverance.
+    advanceClip: {fileID: 0}
+    charClip: {fileID: 0}
+    ghostEffect: 0
+  - text: Within its heart rests the Great Bell, whose voice alongside his shall
+      awaken the Song of Man.
+    advanceClip: {fileID: 0}
+    charClip: {fileID: 0}
+    ghostEffect: 0
+  - text: When all her children are gathered and their tones made whole, the Tower
+      shall ring, and the sky shall open.
+    advanceClip: {fileID: 0}
+    charClip: {fileID: 0}
+    ghostEffect: 0
+  - text: That's all it says.
+    advanceClip: {fileID: 0}
+    charClip: {fileID: 0}
+    ghostEffect: 0
+--- !u!65 &1361020606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361020604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.63, y: 1.33, z: 0.26}
+  m_Center: {x: 0, y: 0.14, z: 0.55}
 --- !u!1 &1456821719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,7 +3763,13 @@ PrefabInstance:
     - {fileID: 65702495048144492, guid: dd87c350ade6dcc41930dd5ef228a4e2, type: 3}
     - {fileID: -8700617353114198275, guid: dd87c350ade6dcc41930dd5ef228a4e2, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dd87c350ade6dcc41930dd5ef228a4e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1361020606}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dd87c350ade6dcc41930dd5ef228a4e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1361020605}
   m_SourcePrefab: {fileID: 100100000, guid: dd87c350ade6dcc41930dd5ef228a4e2, type: 3}
 --- !u!1001 &2001546706
 PrefabInstance:
