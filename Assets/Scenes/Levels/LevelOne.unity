@@ -1804,7 +1804,7 @@ MonoBehaviour:
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
-  - text: '"He will come soon. I''m sure of it?"'
+  - text: '"He will come soon. I''m sure of it."'
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
