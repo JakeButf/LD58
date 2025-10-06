@@ -9348,7 +9348,7 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"PIANO! YOU STAY ON TIME WITH THE STRINGS.\u201D"
+  - text: "\"PIANO! YOU KEEP THE TIME OF THE STRINGS.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
