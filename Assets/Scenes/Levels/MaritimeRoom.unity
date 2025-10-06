@@ -6832,7 +6832,7 @@ Transform:
   m_GameObject: {fileID: 823794366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.42, y: 1.31, z: -2.79}
+  m_LocalPosition: {x: 2.34, y: 1.31, z: 4.37}
   m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -7132,7 +7132,7 @@ MonoBehaviour:
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
-  - text: "\"It beamed down to me, that light of the world.\u201D"
+  - text: "\"I arrived at that light of the world.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
     ghostEffect: 1
@@ -13040,6 +13040,10 @@ MonoBehaviour:
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
+  - text: '"The voyage. I cannot forget."'
+    advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
+    charClip: {fileID: 0}
+    ghostEffect: 1
   - text: "\"I depart tonight. I seek a light that was not warmth.\u201D"
     advanceClip: {fileID: 8300000, guid: 107d19b6ba4122c4f9d43a359097f6fe, type: 3}
     charClip: {fileID: 0}
