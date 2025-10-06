@@ -366,7 +366,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7403502230823770282, guid: c3af5efa50155054aa0358427c3201f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.17
+      value: 3.83
       objectReference: {fileID: 0}
     - target: {fileID: 7403502230823770282, guid: c3af5efa50155054aa0358427c3201f2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -374,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7403502230823770282, guid: c3af5efa50155054aa0358427c3201f2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.97
+      value: -0.57
       objectReference: {fileID: 0}
     - target: {fileID: 7403502230823770282, guid: c3af5efa50155054aa0358427c3201f2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
   promptMessage: (E) to Inspect
   dialogueLines:
-  - text: It appears to be an image of a deserted island.
+  - text: The first island appears to be a deserted island.
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
@@ -26091,7 +26091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
   promptMessage: (E) to Inspect
   dialogueLines:
-  - text: It appears to be an island resembling the moon.
+  - text: The second island seems to resemble the moon.
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
@@ -31175,7 +31175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueReader
   promptMessage: (E) to Inspect
   dialogueLines:
-  - text: It appears to be an island resembling a volcano.
+  - text: The third island resembles a volcano.
     advanceClip: {fileID: 0}
     charClip: {fileID: 0}
     ghostEffect: 0
